@@ -7,36 +7,40 @@ var crawler = require("./lib/crawler"),
     log = require("./lib/log");
 
 
-crawler.get("https://git.zhubajie.la/fe/fis-common/tree/master/widget/ui/components",
+exports.get = function(url){
 
-        function(err,res){
+    crawler.get(url,
 
-            if(err) {
+            function(err,res){
 
-                throw new Error(err);
+                if(err) {
 
-            }
+                    throw new Error(err);
 
-            log.notice("get response, status : ",res.statusCode);
+                }
 
-            if(res.statusCode >= 200 && res.statusCode <= 304) {
+                log.notice("get response, status : ",res.statusCode);
 
-                var projects = parser.parse(res.text,".tree-item-file-name",".str-truncated");
+                if(res.statusCode >= 200 && res.statusCode <= 304) {
 
-                log.notice(`find projects : ${projects.length}`);
+                    var projects = parser.parse(res.text,".tree-item-file-name",".str-truncated");
 
-                var names = [];
+                    log.notice(`find projects : ${projects.length}`);
 
-                projects.each(function(){
+                    var names = [];
 
-                    names.push($(this).html());
+                    projects.each(function(){
 
-                });
+                        names.push($(this).html());
 
-                crawler.getAll("https://git.zhubajie.la/fe/fis-common/commits/master/widget/ui/components/",
-                    names
-                );
+                    });
 
-            }
+                    crawler.getAll(url.replace("tree","commits"),
+                        names,
+                        []
+                    );
 
-        });
+                }
+
+            });
+}
