@@ -1,0 +1,19 @@
+{
+    "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+
+    "Accept-Encoding":"gzip, deflate, sdch, br",
+
+    "Accept-Language":"zh-CN,zh;q=0.8",
+
+    "Cache-Control":"no-cache",
+
+    "Connection":"keep-alive",
+
+    "Cookie":"remember_user_token=W1syMDldLCIkMmEkMTAkZUpsaXF0cDl4SEZ3UWRKTGczT0ZMLiIsIjE0NzYxNTk3OTQuNzE2NTk3OCJd--411662f9c1998bd83b598cdccc909d2acafe964a",
+
+    "Host":"git.zhubajie.la",
+
+    "Pragma":"no-cache",
+
+    "User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.101 Safari/537.36"
+}
